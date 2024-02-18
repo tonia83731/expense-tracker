@@ -1,0 +1,76 @@
+<section class="grid grid-cols-[1fr_2fr_1fr]">
+  <div class="col-start-2">
+    <div>
+      <select name="typeOf" id="typeOf" class="border border-slate-300 rounded w-full h-8 py-1 px-4">
+        <option value="home">家居物業</option>
+        <option value="transportation">交通出行</option>
+        <option value="entertainment">休閒娛樂</option>
+        <option value="food">餐飲食品</option>
+        <option value="others">其他</option>
+      </select>
+    </div>
+    <div class="my-8">
+      <h5 class="font-semibold text-2xl">總金額</h5>
+      <div class="text-orange-400 font-bold text-6xl text-center">25260</div>
+    </div>
+    <div>
+      <ul class="text-slate-800">
+        {{#each records}}
+          <li class="grid grid-cols-4 gap-1 items-center">
+            <div class="bg-stone-200 flex justify-between items-center px-4 py-2 col-span-3">
+              <div class="flex items-center">
+                <div class="text-sky-300 text-4xl">
+                  {{!-- <p>{{this.typeOf}}</p> --}}
+                  <i {{#if (this.typeOf 'home')}}class="fa-solid fa-house"{{/if}}></i>
+
+                  {{!-- {{#if this.typeOf 'transportation'}}
+                    <i class="fa-solid fa-van-shuttle"></i>
+                  {{/if}}
+                  {{#if this.typeOf 'entertainment'}}
+                    <i class="fa-solid fa-face-grin-beam"></i>
+                  {{/if}}
+                  {{#if this.typeOf 'food'}}
+                    <i class="fa-solid fa-utensils"></i>
+                  {{/if}}
+                  {{#if this.typeOf 'others'}}
+                    <i class="fa-solid fa-pen"></i>
+                  {{/if}} --}}
+                </div>
+                <div class="pl-2">
+                  <div class="text-xl font-semibold">{{this.name}}</div>
+                  <p class="text-sm">{{this.date}}</p>
+                </div>
+              </div>
+              <div class="text-xl font-semibold">{{this.price}}</div>
+            </div>
+            <div class="px-4 py-2">
+              <button type="button"
+                class="border border-green-400 rounded px-4 py-1 text-green-400 hover:font-semibold hover:text-green-600 hover:border-green-600 hover:bg-green-50">修改</button>
+              <button type="button"
+                class="border border-rose-400 rounded px-4 py-1 text-rose-400 hover:font-semibold hover:text-rose-600 hover:border-rose-600 hover:bg-rose-50">刪除</button>
+            </div>
+          </li>
+        {{/each}}
+        
+        {{!-- <li class="grid grid-cols-4 gap-1 items-center">
+          <div class="bg-stone-50 flex justify-between items-center px-4 py-2 col-span-3">
+            <div class="flex items-center">
+              <i class="fa-solid fa-house text-sky-300 text-4xl"></i>
+              <div class="pl-2">
+                <div class="text-xl font-semibold">午餐</div>
+                <p class="text-sm">2019/04/23</p>
+              </div>
+            </div>
+            <div class="text-xl font-semibold">60</div>
+          </div>
+          <div class="pl-4 py-2">
+            <button type="button"
+              class="border border-green-400 rounded px-4 py-1 text-green-400 hover:font-semibold hover:text-green-600 hover:border-green-600 hover:bg-green-50">修改</button>
+            <button type="button"
+              class="border border-rose-400 rounded px-4 py-1 text-rose-400 hover:font-semibold hover:text-rose-600 hover:border-rose-600 hover:bg-rose-50">刪除</button>
+          </div>
+        </li> --}}
+      </ul>
+    </div>
+  </div>
+</section>

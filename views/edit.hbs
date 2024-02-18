@@ -1,0 +1,33 @@
+<section class="grid grid-cols-[1fr_2fr_1fr]">
+  <div class="col-start-2">
+    <h1 class="font-bold text-2xl">請修改您的支出</h1>
+    <p><span class="text-rose-600">* </span>為必填欄位</p>
+    <form class="mt-8">
+      <div class="mb-3">
+        <label for="name">名稱<span class="text-rose-600">*</span></label>
+        <input type="text" name="name" id="name" class="border border-slate-300 rounded w-full h-8 py-1 px-4">
+      </div>
+      <div class="mb-3">
+        <label for="date">日期<span class="text-rose-600">*</span></label>
+        <input type="date" name="date" id="date" class="border border-slate-300 rounded w-full h-8 py-1 px-4">
+      </div>
+      <div class="mb-3">
+        <div>類別<span class="text-rose-600">*</span></div>
+        <select name="typeOf" id="typeOf" class="border border-slate-300 rounded w-full h-8 py-1 px-4">
+          <option value="home">家居物業</option>
+          <option value="transportation">交通出行</option>
+          <option value="entertainment">休閒娛樂</option>
+          <option value="food">餐飲食品</option>
+          <option value="others">其他</option>
+        </select>
+      </div>
+      <div class="mb-8">
+        <label for="price">金額<span class="text-rose-600">*</span></label>
+        <input type="number" name="price" id="price" class="border border-slate-300 rounded w-full h-8 py-1 px-4">
+      </div>
+      <div class="w-full flex justify-center">
+        <button type="submit" class="bg-orange-400 shadow-md text-white rounded w-9/12 h-8">送出修改</button>
+      </div>
+    </form>
+  </div>
+</section>

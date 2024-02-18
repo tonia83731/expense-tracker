@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家庭記帳本</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    *:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="w-full h-11 fixed top-0 left-0 bg-slate-300 px-6 flex justify-between items-center">
+    <a href="/">
+      <h1 class="font-bold text-2xl">家庭記帳本</h1>
+    </a>
+    <button class="border border-orange-400 rounded px-4 py-1 text-orange-400 hover:font-semibold hover:text-orange-600 hover:border-orange-600">登出</button>
+  </header>
+  <main class="mt-32 mb-6">
+    {{{ body }}}
+  </main>
+  <script src="https://kit.fontawesome.com/69250c01d2.js" crossorigin="anonymous"></script>
+</body>
+</html>
