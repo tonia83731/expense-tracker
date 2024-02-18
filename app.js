@@ -1,6 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import exphbs from 'express-handlebars'
 
 // 僅在非正式環境中使用dotenv
 if (process.env.NODE_ENV !== 'production') {
@@ -22,8 +23,14 @@ db.once('open', () => {
   console.log('mongodb connected!')
 })
 
+app.engine('hbs', exphbs.engine({
+  defaultLayout: 'main', extname: '.hbs'
+}))
+app.set('view engine', 'hbs')
+
 app.get("/", (req, res) => {
-  res.send('This is my NodeJs + Express project')
+  // res.send('This is my NodeJs + Express project')
+  res.render('index')
 })
 
 app.listen(port, () => {
