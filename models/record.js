@@ -7,15 +7,16 @@ const recordSchema = new Schema({
   },
   category: {
     type: String,
-    required: true
+    required: true,
   },
   date: {
     type: Date,
-    required: true
+    required: true,
+    default: new Date()
   },
   amount: {
     type: Number,
-    required: true
+    required: true,
   }
 })
 
