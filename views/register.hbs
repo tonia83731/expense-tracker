@@ -1,25 +1,26 @@
 <section class="grid grid-cols-[1fr_2fr_1fr]">
   <div class="col-start-2">
     <h1 class="font-bold text-2xl text-center">註冊</h1>
-    <form class="mt-8">
+    {{> message}}
+    <form class="mt-8" action="/users/register" method="POST">
       <div class="mb-3">
         <label for="name">姓名<span class="text-rose-600">*</span></label>
-        <input type="text" name="name" id="name" class="border border-slate-300 rounded w-full h-8 py-1 px-4">
+        <input type="text" name="name" id="name" class="border border-slate-300 rounded w-full h-8 py-1 px-4" value="{{name}}">
       </div>
       <div class="mb-3">
         <label for="email">帳號(Email)<span class="text-rose-600">*</span></label>
-        <input type="email" name="email" id="email" class="border border-slate-300 rounded w-full h-8 py-1 px-4">
+        <input type="email" name="email" id="email" class="border border-slate-300 rounded w-full h-8 py-1 px-4" value="{{email}}">
       </div>
       <div class="mb-3">
         <label for="password">密碼<span class="text-rose-600">*</span></label>
         <input type="password" name="password" id="password"
-          class="border border-slate-300 rounded w-full h-8 py-1 px-4">
+          class="border border-slate-300 rounded w-full h-8 py-1 px-4" value="{{password}}">
       </div>
       <div class="w-full flex justify-center mt-8">
-        <button type="submit" class="bg-orange-400 shadow-md text-white rounded w-full h-8">新增支出</button>
+        <button type="submit" class="bg-orange-400 shadow-md text-white rounded w-full h-8">新增會員</button>
       </div>
       <div class="w-full flex justify-end mt-2 text-slate-500">
-        <p>已有帳號? <a href="/login" class="underline underline-offset-2 hover:text-slate-700 hover:font-bold">登入</a>
+        <p>已有帳號? <a href="/users/login" class="underline underline-offset-2 hover:text-slate-700 hover:font-bold">登入</a>
         </p>
       </div>
     </form>

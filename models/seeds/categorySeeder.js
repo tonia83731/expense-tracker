@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import db from '../../config/mongoos.js'
 import dotenv from "dotenv";
 
 if (process.env.NODE_ENV !== "production") {
@@ -9,42 +9,29 @@ import Category from "../category.js";
 const categoryList = [
   {
     name: "家居物業",
-    icon: '<i class="fa-solid fa-house"></i>',
+    icon: 'fa-solid fa-house',
   },
   {
     name: "交通出行",
-    icon: '<i class="fa-solid fa-van-shuttle"></i>',
+    icon: 'fa-solid fa-van-shuttle',
   },
   {
     name: "休閒娛樂",
-    icon: '<i class="fa-solid fa-face-grin-beam"></i>',
+    icon: 'fa-solid fa-face-grin-beam',
   },
   {
     name: "餐飲食品",
-    icon: '<i class="fa-solid fa-utensils"></i>',
+    icon: 'fa-solid fa-utensils',
   },
   {
     name: "其他",
-    icon: '<i class="fa-solid fa-pen"></i>',
+    icon: 'fa-solid fa-pen',
   },
 ];
 
-mongoose.connect(process.env.MONGODB_URI);
-const db = mongoose.connection;
-db.on("error", () => {
-  console.log("mongodb error!");
-});
-db.once("open", () => {
+db.once("open", async () => {
   console.log("mongodb connected!");
-  Promise.all(
-    Array.from({ length: categoryList.length }, (_, i) =>
-      Category.create({
-        name: categoryList[i].name,
-        icon: categoryList[i].icon,
-      })
-    )
-  ).then(() => {
-    console.log("categoryList created!");
-    process.exit();
-  });
+  await Category.create(categoryList)
+  console.log('categorySeeder created!')
+  process.exit()
 });
